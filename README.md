@@ -1,1 +1,12 @@
 # CryptoClustering
+
+This repo involves using the K-means algorithm and principal component analysis (PCA) to analyze cryptocurrency data and related price fluctuations over various timeframes. The intervals for the price changes will include 24 hours, 7 days, 30 days, 60 days, 200 days, and 1 year. We start with a `csv` file of cryptocurrency data and use pandas to convert the file into a DataFrame. We use `StandardScaler()` to normalize the DataFrame. We can find the optimal `k` value by using the elbow method. Once we plot the `k` values and corresponding inertia values, we have a visual helping us identify the best `k` value at 4. This value is where the rate of decrease begins to slow down. We use PCA and reduce it to three principal components. Explained variance shows us the impact each principal component has, and we use the elbow method to find the best k with the PCA data. Once we plot the k values and corresponding inertia values, we find the best `k` value is 4, the same value calculated with the original data. Lastly, we calculate the weight of each feature on each PCA. On `PCA1`, the features with the strong positive influence are `price_change_percentage_200d` `(0.5945)` and `price_change_percentage_1y` `(0.5684)`; the strongest negative influence is `price_change_percentage_24h` `(-0.4167)`. On `PCA2`, the features with the strong positive influence are `price_change_percentage_14d` `(0.5404)` and `price_change_percentage_30d` `(0.5622)`. On `PCA3`, the feature with the strong positive influence is `price_change_percentage_7d` `(0.7877)`; the strongest negative influence is `price_change_percentage_60d` `(-0.3614)`.  </br>
+
+# Sources
+Xpert Learning Assistant - Various questions, such as further explanations on `k` values and `n_components`. Explanation on `PCA` and corresponding features. </br>
+Module-11-Unsupervised-Learning/Class-1/Activities/02-Ins_Kmeans/Unsolved/services_clustering.ipynb - KMeans algorithm, scatter plots </br>
+Module-11-Unsupervised-Learning/Class-1/Activities/04-Evr_Elbow_Method/Unsolved/elbow_method.ipynb - elbow method </br>
+Module-11-Unsupervised-Learning/Class-2/Activities/05-Stu-Standardizing_Stock_Data/Unsolved/standardizing_stock_data.ipynb - Standard Scaler </br>
+Module-11-Unsupervised-Learning/Class-3/Activities/04-Stu-Energize_Your_Stock_Clustering/Unsolved/energize_your_stock_clustering.ipynb - PCA and determining component weight </br>
+https://towardsmachinelearning.org/k-means/ - k-means explanation
+
